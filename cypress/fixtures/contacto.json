@@ -1,0 +1,9 @@
+{
+  "mensajeContactoValido": {
+    "first_name": "Ana",
+    "last_name": "Prueba",
+    "email": "ana.prueba@test.com",
+    "subject": "customer-service",
+    "message": "Hola, este es un mensaje de prueba automatizado para el formulario de contacto del sitio."
+  }
+}

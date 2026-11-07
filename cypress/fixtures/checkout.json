@@ -1,0 +1,14 @@
+{
+  "direccion": {
+    "address": "Calle Falsa 123",
+    "city": "Azul",
+    "state": "Buenos Aires",
+    "country": "Argentina",
+    "postcode": "8900"
+  },
+  "pago": {
+    "metodo": "Bank Transfer",
+    "nombreCuenta": "Cuenta de Prueba",
+    "numeroCuenta": "1234567890"
+  }
+}

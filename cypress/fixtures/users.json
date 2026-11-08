@@ -1,6 +1,10 @@
 {
-  "usuarioValido": {
+  "validUser": {
     "email": "customer@practicesoftwaretesting.com",
     "password": "welcome01"
+  },
+  "invalidUser": {
+    "email": "customer@practicesoftwaretesting.com",
+    "password": "PasswordIncorrecta123"
   }
 }

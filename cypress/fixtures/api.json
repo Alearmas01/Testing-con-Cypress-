@@ -1,0 +1,14 @@
+{
+  "baseUrl": "https://api-with-bugs.practicesoftwaretesting.com",
+  "usuarioValido": {
+    "email": "customer@practicesoftwaretesting.com",
+    "password": "welcome01"
+  },
+  "usuarioPasswordIncorrecta": {
+    "email": "customer@practicesoftwaretesting.com",
+    "password": "welcome02"
+  },
+  "busquedaSinResultados": "zzzxxx123",
+  "paginaFueraDeRango": 999,
+  "productoInexistente": 99999999
+}

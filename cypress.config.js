@@ -7,5 +7,6 @@ module.exports = defineConfig({
     viewportWidth: 1280,
     viewportHeight: 800,
     setupNodeEvents(on, config) {},
+    supportFile: 'cypress/support/support-commands/e2e.js',
   },
 });

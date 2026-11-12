@@ -19,7 +19,8 @@
   },
   "homepage": "https://github.com/Alearmas01/Testing-con-Cypress-#readme",
   "devDependencies": {
-    "cypress": "^16.2.1"
+    "cypress": "^16.2.1",
+    "cypress-mochawesome-reporter": "^5.0.0"
   },
   "dependencies": {
     "checkout": "^1.0.1",

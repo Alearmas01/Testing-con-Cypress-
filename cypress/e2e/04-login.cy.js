@@ -4,15 +4,16 @@ describe('Inicio de sesión', () => {
     cy.fixture('users').as('users')
     cy.visit('/#/auth/login')
   })
-//CP-LOG-01 Login exitoso con credenciales válidas.
+//Login exitoso con credenciales válidas.
   it('Login con usuario y contraseña válidos', () => {
     cy.get('@users').then((datos) => {
-      cy.completeLogin(datos.validUser.email, datos.validUser.password)
+    cy.completeLogin(datos.validUser.email, datos.validUser.password)
     })
     cy.url().should('include', '/account')
+   
   })
 
-//CP-LOG-02 Intento de login con contraseña inválida
+// Intento de login con contraseña inválida
   it('Login con contraseña inválida', () => {
     cy.get('@users').then((datos) => {
       cy.completeLogin(datos.validUser.email, datos.invalidUser.password)

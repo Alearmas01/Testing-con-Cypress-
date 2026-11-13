@@ -58,14 +58,17 @@ cypress.config.js       # baseUrl del sitio
    O correr todos los tests por terminal:
    ```bash
    npx cypress run
-   ```
-4. OPCIONAL- Generar reportes de pruebas (Mochawesome)
- ```bash
- npm run test-reportes
   ```
-Visualizar el reporte generado: Una vez finalizada la ejecución, se creará automáticamente la carpeta cypress/reports/html/. Abre el archivo index.html en tu navegador para ver el detalle de las pruebas, gráficos, videos y capturas de pantalla.
-
-Aclaración: (Para quienes descargan el proyecto) Solo deben ejecutar npm install para que Node descargue la librería en su máquina y luego correr npm run test-reportes.
+4. OPCIONAL ## Generar reportes de pruebas (Mochawesome)
+   ```bash
+   npm run test-reportes
+   ```
+   Visualizar el reporte generado:
+   Una vez finalizada la ejecución, se creará automáticamente la carpeta `cypress/reports/html/`.
+   Abre el archivo **`index.html`** en tu navegador para ver el detalle de las pruebas, gráficos, videos y capturas de pantalla.
+    
+   Aclaración: (Para quienes descargan el proyecto) Solo deben ejecutar npm install para que Node descargue la librería en su máquina y luego correr npm run test-reportes.
+   
 
 ## Datos de prueba
 

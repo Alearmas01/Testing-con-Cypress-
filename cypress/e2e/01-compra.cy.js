@@ -7,7 +7,7 @@ describe("3.1 Compra exitosa", () => {
     cy.fixture("checkout").as("checkout");
   });
 
-  it("compra un producto de punta a punta", function () {
+  it("Compra un producto de punta a punta", function () {
     // Paso 1: la home muestra productos
     cy.visit("/");
     cy.get('[data-test="product-1"]').should("be.visible");
@@ -30,31 +30,28 @@ describe("3.1 Compra exitosa", () => {
     // El total no es cero
     cy.get('[data-test="cart-total"]').should("not.have.text", "$0.00");
 
-    // Paso 4: iniciar sesión con el usuario de prueba
+
+    // Paso 4: iniciar sesión usando el fixture y Custom Command
     cy.get('[data-test="proceed-1"]').click();
-    cy.get('[data-test="email"]').should("be.visible");
-    cy.get('[data-test="email"]').type(this.users.validUser.email);
-    cy.get('[data-test="password"]').type(this.users.validUser.password, { log: false });
-    cy.get('[data-test="login-submit"]').click();
-
-    // Verificar que el login funcionó
+    
+    cy.get("@users").then((datos) => {
+      cy.completeLogin(datos.validUser.email, datos.validUser.password);
+    });
+    // Verificar que el login funcionó y continuar al checkout
     cy.contains("p", "you are already logged in").should("be.visible");
-
-    // Continuar al checkout
     cy.get('[data-test="proceed-2"]').click();
-
-    // Paso 5: completar el formulario de checkout
+  
+    //Paso 5: completar el formulario de checkout
     cy.get('[data-test="address"]').clear().type(this.checkout.direccion.address);
     cy.get('[data-test="city"]').clear().type(this.checkout.direccion.city);
     cy.get('[data-test="state"]').clear().type(this.checkout.direccion.state);
     cy.get('[data-test="country"]').clear().type(this.checkout.direccion.country);
     cy.get('[data-test="postcode"]').clear().type(this.checkout.direccion.postcode);
-
+  
     cy.get('[data-test="proceed-3"]').click();
     
 
     // Completar datos de pago
-
     cy.contains("h3", "Payment").should("be.visible");
 
     const pago = this.checkout.pago;

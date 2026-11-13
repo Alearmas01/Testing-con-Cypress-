@@ -19,6 +19,47 @@ Cypress.Commands.add("apiLogin", (baseUrl, email, password) => {
   });
 });
 
+/* Acá guardo la función del CARRITO */
+Cypress.Commands.add("agregarProductoAlCarrito", (selectorProducto) => {
+  cy.visit("/");
+  cy.get(`[data-test="${selectorProducto}"]`).click();
+  cy.get('[data-test="product-name"]').should("be.visible");
+  cy.get('[data-test="add-to-cart"]').click();
+  cy.get('[data-test="cart-quantity"]').should("be.visible");
+});
+
+// Abre el carrito desde el ícono del menú.
+Cypress.Commands.add("irAlCarrito", () => {
+  cy.get('[data-test="nav-cart"]').click();
+  cy.url().should("include", "/checkout");
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //registro usuario 
 Cypress.Commands.add('completeRegister', () => {
 

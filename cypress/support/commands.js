@@ -5,7 +5,7 @@
 //
 // For more comprehensive examples of custom
 // commands please read more here:
-// https://on.cypress.io/custom-commands
+// https://cypress.io
 // ***********************************************
 //
 //
@@ -59,3 +59,35 @@ Cypress.Commands.add("irAlCarrito", () => {
   cy.get('[data-test="nav-cart"]').click();
   cy.url().should("include", "/checkout");
 });
+
+/* Acá guardo la función del CARRITo */
+Cypress.Commands.add("agregarProductoAlCarrito", (selectorProducto) => {
+  cy.visit("/");
+  cy.get(`[data-test="${selectorProducto}"]`).click();
+  cy.get('[data-test="product-name"]').should("be.visible");
+  cy.get('[data-test="add-to-cart"]').click();
+  cy.get('[data-test="cart-quantity"]').should("be.visible");
+});
+
+// Abre el carrito desde el ícono del menú.
+Cypress.Commands.add("irAlCarrito", () => {
+  cy.get('[data-test="nav-cart"]').click();
+  cy.url().should("include", "/checkout");
+});
+
+// Registro de usuario
+Cypress.Commands.add("completeRegister", () => {
+  cy.get('[data-test="register-submit"]').click();
+});
+
+// Login de usuario
+Cypress.Commands.add("completeLogin", (email, password) => {
+  if (email) {
+    cy.get('[data-test="email"]').type(email);
+  }
+  if (password) {
+    cy.get('[data-test="password"]').type(password);
+  }
+  cy.get('[data-test="login-submit"]').click();
+});
+

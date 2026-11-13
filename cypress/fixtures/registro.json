@@ -1,0 +1,71 @@
+{
+
+ "errores": {
+    "firstName": "First name is required",
+    "lastName": "Last name is required",
+    "dob": "Date of Birth is required",
+    "address": "Address is required",
+    "postalCode": "Postcode is required",
+    "city": "City is required",
+    "state": "State is required",
+    "country": "Country is required",
+    "phone": "Phone is required",
+    "email": "E-mail is required",
+    "password": "Password is required"
+  },
+  "positivo": {
+    "firstName": "Juan",
+    "lastName": "Perez",
+    "dob": "1995-05-15",
+    "street": "Av. Argentina 123",
+    "postalCode": "8300",
+    "city": "Neuquen",
+    "state": "Neuquen",
+    "country": "AR",
+    "phone": "2994123456",
+    "email": "juan.perez.qa2026@test.com",
+    "password": "Password123!"
+  },
+  "NegativoEmailDuplicado": {
+    "firstName": "Maria",
+    "lastName": "Gomez",
+    "dob": "1990-08-20",
+    "street": "Calle San Martin 456",
+    "postalCode": "8300",
+    "city": "Neuquen",
+    "state": "Neuquen",
+    "country": "AR",
+    "phone": "2995987654",
+    "email": "customer@practicesoftwaretesting.com",
+    "password": "Password123!"
+  },
+  "bordeEdadLimite": {
+    "firstName": "Lucas",
+    "lastName": "Martinez",
+    "dob": "2008-11-11",
+    "street": "Belgrano 789",
+    "postalCode": "8300",
+    "city": "Neuquen",
+    "state": "Neuquen",
+    "country": "AR",
+    "phone": "2996112233",
+    "email": "lucas.borde2026@test.com",
+    "password": "Password123!"
+  },
+  "bordeLongitudMinima": {
+    "firstName": "A",
+    "lastName": "B",
+    "dob": "1995-05-15",
+    "street": "1",
+    "postalCode": "1",
+    "city": "X",
+    "state": "Y",
+    "country": "AR",
+    "phone": "1",
+    "email": "borde.minimo2026@test.com",
+    "password": "Abc123!@"
+  }
+
+ 
+
+}

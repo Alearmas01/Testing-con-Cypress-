@@ -74,3 +74,8 @@ cypress.config.js       # baseUrl del sitio
 
 - Usuario de prueba: `customer@practicesoftwaretesting.com` (la contraseña está en `cypress/fixtures/users.json`).
 - La base de datos del sitio es compartida, por eso los tests no dependen de datos creados previamente y los mails de registro se generan únicos en cada ejecución.
+
+
+### Observaciones
+
+**Test de compra (`01-compra.cy.js`):** Se detectó una inconsistencia al automatizar con Cypress la carga de los datos de dirección de facturación. La compra realizada manualmente funciona correctamente; la dificultad aparece durante la ejecución automatizada, especialmente en Cypress Run, mientras que en Cypress Open suele pasar. Se continúa revisando el comportamiento.

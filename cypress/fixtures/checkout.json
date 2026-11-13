@@ -1,9 +1,9 @@
 {
   "direccion": {
     "address": "Calle Falsa 123",
-    "city": "Azul",
-    "state": "Buenos Aires",
-    "country": "Argentina",
+    "city": "CABA",
+    "state": "BA",
+    "country": "Arg",
     "postcode": "8900"
   },
   "pago": {

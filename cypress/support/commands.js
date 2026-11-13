@@ -1,3 +1,28 @@
+// ***********************************************
+// This example commands.js shows you how to
+// create various custom commands and overwrite
+// existing commands.
+//
+// For more comprehensive examples of custom
+// commands please read more here:
+// https://cypress.io
+// ***********************************************
+//
+//
+// -- This is a parent command --
+// Cypress.Commands.add('login', (email, password) => { ... })
+//
+//
+// -- This is a child command --
+// Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
+//
+//
+// -- This is a dual command --
+// Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
+//
+//
+// -- This will overwrite an existing command --
+// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
 Cypress.Commands.add("apiGetProductos", (baseUrl, qs = {}) => {
   return cy.request({
@@ -19,7 +44,7 @@ Cypress.Commands.add("apiLogin", (baseUrl, email, password) => {
   });
 });
 
-/* Acá guardo la función del CARRITO */
+/* Acá guardo la función del CARRITo */
 Cypress.Commands.add("agregarProductoAlCarrito", (selectorProducto) => {
   cy.visit("/");
   cy.get(`[data-test="${selectorProducto}"]`).click();
@@ -34,44 +59,19 @@ Cypress.Commands.add("irAlCarrito", () => {
   cy.url().should("include", "/checkout");
 });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//registro usuario 
-Cypress.Commands.add('completeRegister', () => {
-
+// Registro de usuario
+Cypress.Commands.add("completeRegister", () => {
   cy.get('[data-test="register-submit"]').click();
-
 });
-//login
-Cypress.Commands.add('completeLogin', (email, password) => {
- 
-  cy.get('[data-test="email"]').type(email)
-  cy.get('[data-test="password"]').type(password)
-  cy.get('[data-test="login-submit"]').click()
-  cy.get('[data-test="login-submit"]').should('be.visible')
- 
-})
+
+// Login de usuario
+Cypress.Commands.add("completeLogin", (email, password) => {
+  if (email) {
+    cy.get('[data-test="email"]').type(email);
+  }
+  if (password) {
+    cy.get('[data-test="password"]').type(password);
+  }
+  cy.get('[data-test="login-submit"]').click();
+});
+
